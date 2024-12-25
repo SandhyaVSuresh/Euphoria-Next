@@ -1,17 +1,10 @@
 "use client";
 import styled from "styled-components";
 import Slider from "react-slick";
-// import data from "./productData.json";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import {useNavigate} from "react-router-dom";
 
 function NewArrival() {
-  // const newArrivalItems = data.filter(item => item.heading === "New Arrival");
-  // const navigate = useNavigate();
-  //   const handleCardClick=(id) =>{
-  //     navigate(`/product/${id}`);
-  //   }
 
   const [newArrivalItems, setnewArrivalItems] = useState([]);
 

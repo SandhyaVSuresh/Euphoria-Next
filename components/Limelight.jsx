@@ -38,13 +38,13 @@ const router = useRouter();
   }, []);
 
   const handleCard = (Id) => {
-    console.log(Id);
-    // if(localStorage.getItem("token")!==null){
-    //   return router.push(`/product/${Id}`)
-    // }else{
-    //   return alert("Please Login To Purchase or View")
-    // }
-    router.push(`/product/${Id}`);
+    // console.log(Id);
+    if(localStorage.getItem("token")!==null){
+      return router.push(`/product/${Id}`)
+    }else{
+      return alert("Please Login To Purchase or View")
+    }
+    // router.push(`/product/${Id}`);
   };
 
   if (loading) return <p>Loading...</p>;

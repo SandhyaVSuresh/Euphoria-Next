@@ -32,13 +32,6 @@ function SimilarProducts() {
         setLoading(false);
       });
   }, []);
-  
-  // const similarProducts = data.filter(
-  //   (item) =>
-  //     item.id !== currentProductId &&
-  //     !item.isFeedback &&
-  //     item.heading.toLowerCase() !== "feedback"
-  // );
 
   const getRandomItems = (items, count) => {
     const shuffled = [...items].sort(() => 0.5 - Math.random());
@@ -47,13 +40,13 @@ function SimilarProducts() {
 
   const randomSimilarProducts = getRandomItems(similar, 4);
   const handleCard = (Id) => {
-    console.log(Id);
-    // if(localStorage.getItem("token")!==null){
-    //   return router.push(`/product/${Id}`)
-    // }else{
-    //   return alert("Please Login To Purchase or View")
-    // }
-    router.push(`/product/${Id}`);
+    // console.log(Id);
+    if(localStorage.getItem("token")!==null){
+      return router.push(`/product/${Id}`)
+    }else{
+      return alert("Please Login To Purchase or View")
+    }
+    // router.push(`/product/${Id}`);
   };
 
   if (loading) return <p>Loading...</p>;

@@ -37,6 +37,7 @@ function Feedback() {
   );
 }
 export default Feedback;
+
 const FeedbackText = styled.p`
 font-size:.8rem;
 `;

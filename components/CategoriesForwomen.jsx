@@ -17,7 +17,7 @@ function CategoriesForwomen() {
     axios
       .get("https://fakestoreapi.com/products")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const womenCategory = response.data.filter((item) =>
           item.category.toLowerCase().includes("women's clothing")
         );
@@ -33,12 +33,12 @@ function CategoriesForwomen() {
 
   const handleCard = (Id) => {
     console.log(Id);
-    // if(localStorage.getItem("token")!==null){
-    //   return router.push(`/product/${Id}`)
-    // }else{
-    //   return alert("Please Login To Purchase or View")
-    // }
-    router.push(`/product/${Id}`);
+    if(localStorage.getItem("token")!==null){
+      return router.push(`/product/${Id}`)
+    }else{
+      return alert("Please Login To Purchase or View")
+    }
+    // router.push(`/product/${Id}`);
   };
 
   if (loading) return <p>Loading...</p>;

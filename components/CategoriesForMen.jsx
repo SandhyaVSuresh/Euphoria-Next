@@ -16,7 +16,7 @@ function CategoriesForMen() {
     axios
       .get("https://fakestoreapi.com/products")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const menCategory = response.data.filter(item=> item.category.toLowerCase().includes("men's clothing")).slice(0, 4)
         setCategoriesForMen(menCategory);
         setLoading(false);
@@ -29,7 +29,7 @@ function CategoriesForMen() {
   }, []);
 
   const handleCard = (Id) => {
-    console.log(Id);
+    // console.log(Id);
     if(localStorage.getItem("token")!==null){
       return router.push(`/product/${Id}`)
     }else{
