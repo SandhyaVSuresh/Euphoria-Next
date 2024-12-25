@@ -1,0 +1,28 @@
+[
+    
+    {
+      "id": 1,
+      "heading": "Feedback",
+      "img": "/feedbackImage/feed1.png",
+      "rating": 4.5,
+      "name": "Floyd Miles",
+      "msg": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. "
+    },
+    {
+      "id": 2,
+      "heading": "Feedback",
+      "img": "/feedbackImage/feed2.png",
+      "rating": 4,
+      "name": "Ronald Richards",
+      "msg": "ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    {
+      "id": 3,
+      "heading": "Feedback",
+      "img": "/feedbackImage/feed3.png",
+      "rating": 3,
+      "name": "Savannah Nguyen",
+      "msg": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.  Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    }
+  ]
+  
