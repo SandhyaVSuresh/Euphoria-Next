@@ -11,6 +11,7 @@ function Limelight() {
   const [error, setError] = useState(null);
   const router = useRouter();
 
+  const [clickedItems, setClickedItems] = useState({});
   const toggleHeart = (index) => {
     setClickedItems((prev) => ({
       ...prev,
