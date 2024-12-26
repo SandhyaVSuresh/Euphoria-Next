@@ -90,7 +90,7 @@ const Navbar = () => {
               <StyledLink onClick={toggleLoginPopup}>
                 <Rightimg src="/Navbar/signIn.png" alt="icons" />
               </StyledLink>
-              <StyledLink1 href="#">
+              <StyledLink1 href="/">
                 <Rightimg src="/Navbar/signUp.png" alt="icons" />
               </StyledLink1>
             </>

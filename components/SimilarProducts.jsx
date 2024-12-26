@@ -22,7 +22,7 @@ function SimilarProducts() {
      axios
      .get('https://fakestoreapi.com/products')
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setsimilar(response.data);
         setLoading(false);
       })

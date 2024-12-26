@@ -3,7 +3,6 @@
 import styled from "styled-components";
 import data from "./productData.json";
 
-
 function Feedback() {
   const feedbackdata = data.filter((item) => item.heading === "Feedback");
 

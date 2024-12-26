@@ -32,16 +32,6 @@ const Page = ({ params }) => {
     window.scrollTo(0, 0);
   }, [res]);
 
-  //   useEffect(() => {
-  //     if (product) {
-  //       setSelectedImage(product.img);
-  //       setSelectedColor(null);
-  //       setSelectedSize(null);
-  //       setActiveTab(1);
-  //       window.scrollTo({ top: 0, behavior: "smooth" });
-  //     }
-  //   }, [product]);
-
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
   };
@@ -112,6 +102,7 @@ const Page = ({ params }) => {
                 {product.rating?.count} comments
               </Comments>
             </SmallGroup>
+
             <SizesContainer>
               <TextSize>
                 <Sizeh3>Select Size</Sizeh3>
@@ -119,7 +110,6 @@ const Page = ({ params }) => {
                   Size Guide <Icons src="/producPage/arrow.png" width="10px" />
                 </SizeLink>
               </TextSize>
-
               {["XL", "L", "M", "S", "XS"].map((size) => (
                 <SizeButton
                   key={size}
@@ -130,6 +120,7 @@ const Page = ({ params }) => {
                 </SizeButton>
               ))}
             </SizesContainer>
+
             <ColorsContainer>
               <h3>Colors Available:</h3>
               <ColorsDiv>
@@ -156,32 +147,38 @@ const Page = ({ params }) => {
               </Button>
               <Price>${product.price}</Price>
             </SmallGroup>
+
             <hr />
             <InfoBottom>
+
               <ContentDiv>
                 <IconDiv>
                   <Icons src="/producPage/card.png" />
                 </IconDiv>
                 <Textp>Secure payment</Textp>
               </ContentDiv>
+
               <ContentDiv>
                 <IconDiv>
                   <Icons src="/producPage/Size.png" />
                 </IconDiv>
                 <Textp>Size & Fit</Textp>
               </ContentDiv>
+
               <ContentDiv>
                 <IconDiv>
                   <Icons src="/producPage/truck.png" />
                 </IconDiv>
                 <Textp>Free Shipping</Textp>
               </ContentDiv>
+
               <ContentDiv>
                 <IconDiv>
                   <Icons src="/producPage/Free.png" />
                 </IconDiv>
                 <Textp>Free Shipping & Returns</Textp>
               </ContentDiv>
+
             </InfoBottom>
           </InfoSection>
         </MainContainer>
@@ -191,6 +188,7 @@ const Page = ({ params }) => {
             <LineDiv></LineDiv>
             <DescriptionHeading>Product Description</DescriptionHeading>
           </DiscriptionHead>
+
           <DiscriptionContent>
             <LeftDiv>
               <LeftHead role="tablist" aria-label="My Tabs">
@@ -260,34 +258,36 @@ const Page = ({ params }) => {
                 </DescriptionText>
               )}
             </LeftDiv>
+
             <RightDiv>
               <FeaturesList>
                 <FeatureItem>
-                  <FearureHead>Fabric</FearureHead>{" "}
+                  <FearureHead>Fabric</FearureHead>
                   <FearureContent>Bio-washed Cotton</FearureContent>
                 </FeatureItem>
                 <FeatureItem>
-                  <FearureHead>Pattern</FearureHead>{" "}
+                  <FearureHead>Pattern</FearureHead>
                   <FearureContent>Printed</FearureContent>
                 </FeatureItem>
                 <FeatureItem>
-                  <FearureHead>Fit</FearureHead>{" "}
+                  <FearureHead>Fit</FearureHead>
                   <FearureContent>Regular Fit</FearureContent>
                 </FeatureItem>
                 <FeatureItem>
-                  <FearureHead>Neck</FearureHead>{" "}
+                  <FearureHead>Neck</FearureHead>
                   <FearureContent>Round Neck</FearureContent>
                 </FeatureItem>
                 <FeatureItem>
-                  <FearureHead>Sleeves</FearureHead>{" "}
+                  <FearureHead>Sleeves</FearureHead>
                   <FearureContent>Full Sleeves</FearureContent>
                 </FeatureItem>
                 <FeatureItem>
-                  <FearureHead>style</FearureHead>{" "}
+                  <FearureHead>style</FearureHead>
                   <FearureContent>Casule Wear</FearureContent>
                 </FeatureItem>
               </FeaturesList>
             </RightDiv>
+
           </DiscriptionContent>
         </Description>
       </Wrapper>

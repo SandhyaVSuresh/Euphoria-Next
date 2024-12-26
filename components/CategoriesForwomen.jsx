@@ -32,7 +32,7 @@ function CategoriesForwomen() {
   }, []);
 
   const handleCard = (Id) => {
-    console.log(Id);
+    // console.log(Id);
     if(localStorage.getItem("token")!==null){
       return router.push(`/product/${Id}`)
     }else{

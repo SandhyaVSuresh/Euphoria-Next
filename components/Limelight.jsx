@@ -1,20 +1,16 @@
-'use client';
+"use client";
 
 import styled from "styled-components";
-import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import { useRouter } from "next/navigation";
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Limelight() {
   const [limelight, setLimelight] = useState([]);
   const [loading, setLoading] = useState(true);
-const [error, setError] = useState(null);
-const router = useRouter();
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
-  const [clickedItems, setClickedItems] = useState({});
-  const handleCardClick = (id) => {
-    navigate(`/product/${id}`);
-  };
   const toggleHeart = (index) => {
     setClickedItems((prev) => ({
       ...prev,
@@ -26,7 +22,7 @@ const router = useRouter();
     axios
       .get("https://fakestoreapi.com/products")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setLimelight(response.data.slice(0, 4));
         setLoading(false);
       })
@@ -39,10 +35,10 @@ const router = useRouter();
 
   const handleCard = (Id) => {
     // console.log(Id);
-    if(localStorage.getItem("token")!==null){
-      return router.push(`/product/${Id}`)
-    }else{
-      return alert("Please Login To Purchase or View")
+    if (localStorage.getItem("token") !== null) {
+      return router.push(`/product/${Id}`);
+    } else {
+      return alert("Please Login To Purchase or View");
     }
     // router.push(`/product/${Id}`);
   };
@@ -62,7 +58,11 @@ const router = useRouter();
         <NewCardsDiv>
           {limelight.map((item, index) => (
             <NewCardDiv key={item.id}>
-              <CardImg src={item.image} alt={item.title}  onClick={() => handleCard(item.id)}/>
+              <CardImg
+                src={item.image}
+                alt={item.title}
+                onClick={() => handleCard(item.id)}
+              />
               <HeartImg
                 src={clickedItems[index] ? "/redheart1.png" : "/heart1.png"}
                 onClick={() => toggleHeart(index)}

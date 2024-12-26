@@ -58,7 +58,6 @@ const Footer = () => {
         </TopConDiv>
 
         <TopUl visible={true}>
-          {/* {" "} */}
           <HeadingH5>Location</HeadingH5>
           <List>support@euphoria.in</List>
           <List>Eklingpura Chouraha, Ahmedabad Main Road</List>

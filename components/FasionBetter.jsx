@@ -1,9 +1,11 @@
 "use client";
+
 import styled from "styled-components";
 
 function FasionBetter() {
   return (
     <Container>
+
       <LeftContainer>
         <HeadH2>WE MADE YOUR EVERYDAY FASHION BETTER!</HeadH2>
         <ParaP>
@@ -12,9 +14,11 @@ function FasionBetter() {
         </ParaP>
         <ShopButton>Shop Now</ShopButton>
       </LeftContainer>
+
       <RightContainer>
         <RightImg src="/Better/better2.png" />
       </RightContainer>
+      
     </Container>
   );
 }
