@@ -291,7 +291,7 @@ const Page = ({ params }) => {
           </DiscriptionContent>
         </Description>
       </Wrapper>
-      <SimilarProducts />
+      <SimilarProducts category={product.category} id={product.id}/>
     </>
   );
 };
@@ -311,6 +311,7 @@ const BreadcrumbDiv = styled.div`
 const Breadcrumb = styled.p`
   font-size: 0.9rem;
   color: #6c757d;
+  cursor:pointer;
 `;
 
 const BreadcrumbImg = styled.img`
@@ -528,9 +529,10 @@ const FeaturesList = styled.div`
   & > div:nth-last-child(-n + 3) {
     border-bottom: none;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 350px) {
     // grid-template-columns: 1fr;
     // gap: 1rem;
+  // padding: .5rem;
   }
 `;
 const FeatureItem = styled.div`
@@ -539,6 +541,8 @@ const FeatureItem = styled.div`
   padding: 1rem 1.2rem;
   color: #333;
   gap: 0.7rem;
+  @media (max-width: 500px) {
+  padding: .8rem .5rem;
 `;
 const FearureHead = styled.p`
   font-size: 0.8rem;
@@ -547,6 +551,9 @@ const FearureHead = styled.p`
 const FearureContent = styled.p`
   font-size: 0.9rem;
   font-weight: 600;
+  @media(max-width:440px){
+  font-size:.7rem;
+  }
 `;
 const SmallGroup = styled.div`
   display: flex;
@@ -637,6 +644,9 @@ const IconDiv = styled.div`
 `;
 const Textp = styled.p`
   margin-top: 5px;
+  @media(max-width:450px){
+  font-size:.8rem;
+  }
 `;
 const LeftHead = styled.div`
   width: 100%;

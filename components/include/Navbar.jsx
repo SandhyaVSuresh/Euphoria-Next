@@ -139,7 +139,7 @@ const StyledLink = styled.a`
   }
   @media (max-width: 480px) {
     font-size: 12px;
-    padding: 6px 10px;
+    padding: 5px 9px;
   }
 `;
 
@@ -170,8 +170,10 @@ const RightDiv = styled.div`
   @media (max-width: 1100px) {
     gap: 0;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     // display: none;
+    gap: .2rem;
+    margin-right: 0;
   }
 `;
 
@@ -188,6 +190,7 @@ const RightLink = styled(Link)`
   }
   @media (max-width: 500px) {
     height: 18px;
+    padding:6px;
   }
 `;
 
@@ -195,8 +198,8 @@ const Rightimg = styled.img`
   width: 18px;
   height: 18px;
   @media (max-width: 500px) {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
   }
 `;
 

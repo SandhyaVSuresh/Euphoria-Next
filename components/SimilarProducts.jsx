@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-function SimilarProducts() {
-  const [similar, setsimilar] = useState([])
+function SimilarProducts({ category, id }) { 
+  const [similar, setSimilar] = useState([]);
   const [clickedItems, setClickedItems] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,11 +19,10 @@ function SimilarProducts() {
 
   useEffect(() => {
     setLoading(true);
-     axios
-     .get('https://fakestoreapi.com/products')
+    axios
+      .get('https://fakestoreapi.com/products')
       .then((response) => {
-        // console.log(response.data);
-        setsimilar(response.data);
+        setSimilar(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -38,21 +37,25 @@ function SimilarProducts() {
     return shuffled.slice(0, count);
   };
 
-  const randomSimilarProducts = getRandomItems(similar, 4);
+  const filteredProducts = similar.filter(
+    (item) => item.category === category && item.id !== id
+  );
+  
+
+  const randomSimilarProducts = getRandomItems(filteredProducts, 4);
+
   const handleCard = (Id) => {
-    // console.log(Id);
-    if(localStorage.getItem("token")!==null){
-      return router.push(`/product/${Id}`)
-    }else{
-      return alert("Please Login To Purchase or View")
+    if (localStorage.getItem("token") !== null) {
+      return router.push(`/product/${Id}`);
+    } else {
+      return alert("Please Login To Purchase or View");
     }
-    // router.push(`/product/${Id}`);
   };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
-  if (!similar || !Array.isArray(similar))
-    return <p>No products available.</p>;
+  if (!filteredProducts || filteredProducts.length === 0)
+    return <p>No similar products available.</p>;
 
   return (
     <Container>
@@ -62,29 +65,25 @@ function SimilarProducts() {
       </NewHeadDiv>
       <NewBodyDiv>
         <NewCardsDiv>
-          
-            {randomSimilarProducts.map((item, index) => (
-              <NewCardDiv
-                key={item.id}
-                
-              >
-                <CardImg src={item.image} alt={item.title} onClick={() => handleCard(item.id)}/>
-                <HeartImg
-                  src={clickedItems[index] ? "/redheart1.png" : "/heart1.png"}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleHeart(index);
-                  }}
-                  alt="wishlist icon"
-                />
-                <NewCardTextDiv>
-                  <TextDiv>
-                    <CardTitleH3>{item.title}</CardTitleH3>
-                  </TextDiv>
-                  <Pricep>${item.price}</Pricep>
-                </NewCardTextDiv>
-              </NewCardDiv>
-            ))}
+          {randomSimilarProducts.map((item, index) => (
+            <NewCardDiv key={item.id}>
+              <CardImg src={item.image} alt={item.title} onClick={() => handleCard(item.id)} />
+              <HeartImg
+                src={clickedItems[index] ? "/redheart1.png" : "/heart1.png"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHeart(index);
+                }}
+                alt="wishlist icon"
+              />
+              <NewCardTextDiv>
+                <TextDiv>
+                  <CardTitleH3>{item.title}</CardTitleH3>
+                </TextDiv>
+                <Pricep>${item.price}</Pricep>
+              </NewCardTextDiv>
+            </NewCardDiv>
+          ))}
         </NewCardsDiv>
       </NewBodyDiv>
     </Container>

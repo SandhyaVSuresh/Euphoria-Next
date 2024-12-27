@@ -153,7 +153,7 @@ const Arrow = styled.div`
 
 const SlideContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 560px;
 `;
 
 const SlideEffect = styled.div`
@@ -192,14 +192,17 @@ const Slideh1 = styled.h1`
   color: white;
   @media (max-width: 800px) {
     background: rgba(178, 178, 178, 0.5);
-    width: 280px;
+    width: fit-content;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 30px;
     margin-bottom: 10px;
   }
-  @media (max-width: 400px) {
-    font-size: 2.5rem;
+  @media (max-width: 500px) {
+    font-size: 2.2rem;
+  }
+    @media (max-width: 380px) {
+    font-size: 1.8rem;
   }
 `;
 
