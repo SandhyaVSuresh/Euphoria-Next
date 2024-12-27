@@ -1,7 +1,7 @@
-"use client"
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import axios from 'axios';
+"use client";
+import React, { useState } from "react";
+import styled from "styled-components";
+import axios from "axios";
 
 const PopupContainer = styled.div`
   position: fixed;
@@ -27,57 +27,73 @@ const PopupContent = styled.div`
   align-items: center;
   position: relative;
   gap: 10px;
-  h2{
-    font-size:30px;
-    margin: 15px 10px;
-  }
 
-  input{
+  input {
     width: 80%;
     padding: 15px 10px;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
-  }
-
-  button{
-    font-size: 18px;
-    margin: 10px 0;
-    padding: 10px 20px;
-    font-weight: 600;
-    &:hover{
-        background-color: #0088ff;
-    }
+    outline:none;
   }
 `;
-
-const CloseButton = styled.button`
-  background: #858282c0;
-  padding: 5px;
-  border-radius: 50%;
-  border: none;
+const Head2 = styled.h2`
+  color: #3c4242;
   font-size: 30px;
+  margin: 15px 10px;
+`;
+const SubmitButton = styled.button`
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #3c4242;
+  border: 1px solid #3c4242;
+  &:hover {
+    background-color: #3c4242;
+    color: #fff;
+  }
+`;
+const CloseButton = styled.button`
+  background: #3c4242;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
   cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: #3c4242;
+    border: 1px solid #3c4242;
+  }
 `;
 
-export function Page({ onClose, onLoginSuccess }){
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export function Page({ onClose, onLoginSuccess }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://fakestoreapi.com/auth/login', {
-        username: username, 
-        password: password, 
+      const response = await axios.post("https://fakestoreapi.com/auth/login", {
+        username: username,
+        password: password,
       });
-      localStorage.setItem('token', response.data.token);
-      onClose(); 
+      localStorage.setItem("token", response.data.token);
+      onClose();
       onLoginSuccess();
     } catch (error) {
-      alert('Login failed!');
+      alert("Login failed!");
       console.error(error);
     }
   };
@@ -86,7 +102,7 @@ export function Page({ onClose, onLoginSuccess }){
     <PopupContainer>
       <PopupContent>
         <CloseButton onClick={onClose}>X</CloseButton>
-        <h2>Login</h2>
+        <Head2>Login</Head2>
         <input
           type="text"
           placeholder="Username"
@@ -99,8 +115,8 @@ export function Page({ onClose, onLoginSuccess }){
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin}>Submit</button>
+        <SubmitButton onClick={handleLogin}>Submit</SubmitButton>
       </PopupContent>
     </PopupContainer>
   );
-};
+}

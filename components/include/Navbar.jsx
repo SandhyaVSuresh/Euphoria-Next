@@ -128,9 +128,9 @@ const StyledLink = styled.a`
   font-size: 16px;
   padding: 10px 15px;
   cursor: pointer;
-  border: 1px solid #3c4242;
+  border: 1px solid #666666;
   &:hover {
-    background-color: #3c4230;
+    background-color:#666666;
   }
 
   @media (max-width: 768px) {
@@ -143,15 +143,15 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledLink1 = styled.a`
+const StyledLink1 = styled(Link)`
   text-decoration: none;
   background-color: #fff;
   font-size: 16px;
   padding: 10px 15px;
-  border: 1px solid #3c4242;
+  border: 1px solid #666666;
   cursor: pointer;
   &:hover {
-    background-color: #3c4230;
+    background-color: #666666;
   }
   @media (max-width: 768px) {
     font-size: 14px;
