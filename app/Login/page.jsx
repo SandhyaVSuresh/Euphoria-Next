@@ -1,9 +1,10 @@
 "use client";
+
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-function Page({ onClose, onLoginSuccess }) {
+export const Page = ({ onClose, onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,8 +45,6 @@ function Page({ onClose, onLoginSuccess }) {
     </PopupContainer>
   );
 }
-
-export default Page;
 
 const PopupContainer = styled.div`
   position: fixed;
