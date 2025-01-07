@@ -264,7 +264,9 @@ const Logoimg = styled.div`
     width: 70px;
   }
 `;
-const NavUl = styled.ul`
+const NavUl = styled.ul.attrs(()=>({
+  isOpen:undefined,
+}))`
   display: flex;
   justify-content: space-between;
   gap: 1rem;

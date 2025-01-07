@@ -182,11 +182,13 @@ const TopUl = styled.ul`
   list-style: none;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
+  display:block;
   @media (max-width: 500px) {
-   max-height: ${(props) => (props.visible ? "200px" : "0")};
-    display: block;
+    max-height: ${({ visible }) => (visible ? "200px" : "0")}; /* toggle max-height */
+    display: ${({ visible }) => (visible ? "block" : "none")}; /* toggle visibility */
   }
 `;
+
 const HeadingH5 = styled.h5`
   font-size: 1.3rem;
   font-weight: 500;

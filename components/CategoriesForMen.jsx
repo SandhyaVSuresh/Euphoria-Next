@@ -53,7 +53,7 @@ function CategoriesForMen() {
       <NewBodyDiv>
         <NewCardsDiv>
           {categoriesForMen.map((item) => (
-            <NewCardDiv key={item.id} r onClick={() => handleCard(item.id)}>
+            <NewCardDiv key={item.id} onClick={() => handleCard(item.id)}>
               <CardImg src={item.image} />
               <CardTitleH3>{item.title}</CardTitleH3>
               <NewCardLinkDiv>

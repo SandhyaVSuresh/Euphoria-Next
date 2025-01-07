@@ -3,22 +3,45 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function NewArrival() {
 
   const [newArrivalItems, setnewArrivalItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
+    setLoading(true);
     const fetchNewArrival = async () => {
       try {
         const response = await axios.get("https://fakestoreapi.com/products");
         setnewArrivalItems(response.data);
+        setLoading(false);
       } catch {
         console.log("error:", error);
+        setError("Failed to fetch data. Please try again later.");
+        setLoading(false);
       }
     };
     fetchNewArrival();
   }, []);
+
+  const handleCardClick = (Id) => {
+    // console.log(Id);
+    if(localStorage.getItem("token")!==null){
+      return router.push(`/product/${Id}`)
+    }else{
+      return alert("Please Login To Purchase or View")
+    }
+    // router.push(`/product/${Id}`);
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+  if (!newArrivalItems || !Array.isArray(newArrivalItems))
+    return <p>No products available.</p>;
 
   const settings = {
     
