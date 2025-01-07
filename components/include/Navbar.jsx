@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Page } from "../../app/Login/page";
+import Page from "../../app/Login/page";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

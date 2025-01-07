@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-export const Page = ({ onClose, onLoginSuccess }) => {
+const LoginPage = ({ onClose, onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,7 +44,9 @@ export const Page = ({ onClose, onLoginSuccess }) => {
       </PopupContent>
     </PopupContainer>
   );
-}
+};
+
+export default LoginPage;
 
 const PopupContainer = styled.div`
   position: fixed;
@@ -77,14 +79,16 @@ const PopupContent = styled.div`
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
-    outline:none;
+    outline: none;
   }
 `;
+
 const Head2 = styled.h2`
   color: #3c4242;
   font-size: 30px;
   margin: 15px 10px;
 `;
+
 const SubmitButton = styled.button`
   font-size: 18px;
   margin: 10px 0;
@@ -98,6 +102,7 @@ const SubmitButton = styled.button`
     color: #fff;
   }
 `;
+
 const CloseButton = styled.button`
   background: #3c4242;
   padding: 5px;
