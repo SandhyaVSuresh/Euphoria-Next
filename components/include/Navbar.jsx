@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import LoginPage from "../../app/Login/page";
+import Popup from "../Popup";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -107,7 +107,7 @@ const Navbar = () => {
         </MenuIcon>
       </NavDiv>
       {showLogin && (
-        <LoginPage
+        <Popup
           onClose={toggleLoginPopup}
           onLoginSuccess={() => {
             setIsLoggedIn(true);
